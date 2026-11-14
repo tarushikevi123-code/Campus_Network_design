@@ -33,6 +33,7 @@ The implementation includes 15 VLANs, Inter-VLAN Routing, DHCP, HSRP, ACLs, stat
 - IoT Smart Parking
 
 ## 4. Network Architecture
+<img width="1467" height="778" alt="image" src="https://github.com/user-attachments/assets/a6ffcc85-cab5-47d8-8dc0-5b606635814d" />
 
 The network consists of:
 
