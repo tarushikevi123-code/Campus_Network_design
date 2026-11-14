@@ -1,0 +1,276 @@
+! Sanitized running-configuration export for portfolio documentation.
+! Device prompt/output headers and hardware UDI were omitted; network commands are otherwise preserved.
+!
+version 15.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Main-router
+!
+!
+!
+!
+ip dhcp excluded-address 192.168.1.1 192.168.1.10
+ip dhcp excluded-address 192.168.2.1 192.168.2.10
+ip dhcp excluded-address 192.168.3.1 192.168.3.10
+ip dhcp excluded-address 192.168.4.1 192.168.4.10
+ip dhcp excluded-address 192.168.5.1 192.168.5.10
+ip dhcp excluded-address 192.168.6.1 192.168.6.10
+ip dhcp excluded-address 192.168.7.1 192.168.7.10
+ip dhcp excluded-address 192.168.8.1 192.168.8.10
+ip dhcp excluded-address 192.168.9.1 192.168.9.10
+ip dhcp excluded-address 192.168.10.1 192.168.10.10
+ip dhcp excluded-address 192.168.11.1 192.168.11.10
+ip dhcp excluded-address 192.168.12.1 192.168.12.10
+ip dhcp excluded-address 192.168.13.1 192.168.13.10
+ip dhcp excluded-address 192.168.14.1 192.168.14.10
+ip dhcp excluded-address 192.168.15.1 192.168.15.10
+!
+ip dhcp pool Kati0
+ network 192.168.1.0 255.255.255.0
+ default-router 192.168.1.254
+ dns-server 192.168.1.1
+ip dhcp pool Sekretaria
+ network 192.168.2.0 255.255.255.0
+ default-router 192.168.2.254
+ dns-server 192.168.2.1
+ip dhcp pool LabDet
+ network 192.168.3.0 255.255.255.0
+ default-router 192.168.3.254
+ dns-server 192.168.3.1
+ip dhcp pool LabDii
+ network 192.168.4.0 255.255.255.0
+ default-router 192.168.4.254
+ dns-server 192.168.4.1
+ip dhcp pool Arkiva
+ network 192.168.5.0 255.255.255.0
+ default-router 192.168.5.254
+ dns-server 192.168.5.1
+ip dhcp pool StafDii
+ network 192.168.6.0 255.255.255.0
+ default-router 192.168.6.254
+ dns-server 192.168.6.1
+ip dhcp pool LabDiiK2
+ network 192.168.13.0 255.255.255.0
+ default-router 192.168.13.254
+ dns-server 192.168.13.1
+ip dhcp pool Dekan
+ network 192.168.7.0 255.255.255.0
+ default-router 192.168.7.254
+ dns-server 192.168.7.1
+ip dhcp pool Financa
+ network 192.168.8.0 255.255.255.0
+ default-router 192.168.8.254
+ dns-server 192.168.8.1
+ip dhcp pool PergjDep
+ network 192.168.9.0 255.255.255.0
+ default-router 192.168.9.254
+ dns-server 192.168.9.1
+ip dhcp pool StafDet
+ network 192.168.10.0 255.255.255.0
+ default-router 192.168.10.254
+ dns-server 192.168.10.1
+ip dhcp pool LabDii2K2
+ network 192.168.14.0 255.255.255.0
+ default-router 192.168.14.254
+ dns-server 192.168.14.1
+ip dhcp pool LabDetk3
+ network 192.168.11.0 255.255.255.0
+ default-router 192.168.11.254
+ dns-server 192.168.11.1
+ip dhcp pool LabDet2K3
+ network 192.168.12.0 255.255.255.0
+ default-router 192.168.12.254
+ dns-server 192.168.12.1
+ip dhcp pool SmartParking
+ network 192.168.15.0 255.255.255.0
+ default-router 192.168.15.254
+ dns-server 192.168.15.254
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.1.1 255.255.255.0
+ standby 10 ip 192.168.1.254
+ standby 10 priority 110
+ standby 10 preempt
+!
+interface GigabitEthernet0/0/0.20
+ encapsulation dot1Q 20
+ ip address 192.168.2.1 255.255.255.0
+ ip access-group 120 in
+ standby 20 ip 192.168.2.254
+ standby 20 priority 110
+ standby 20 preempt
+!
+interface GigabitEthernet0/0/0.30
+ encapsulation dot1Q 30
+ ip address 192.168.3.1 255.255.255.0
+ standby 30 ip 192.168.3.254
+ standby 30 priority 110
+ standby 30 preempt
+!
+interface GigabitEthernet0/0/0.40
+ encapsulation dot1Q 40
+ ip address 192.168.4.1 255.255.255.0
+ standby 40 ip 192.168.4.254
+ standby 40 priority 110
+ standby 40 preempt
+!
+interface GigabitEthernet0/0/0.50
+ encapsulation dot1Q 50
+ ip address 192.168.5.1 255.255.255.0
+ ip helper-address 192.168.1.1
+ ip access-group 150 out
+ standby 50 ip 192.168.5.254
+ standby 50 priority 110
+ standby 50 preempt
+!
+interface GigabitEthernet0/0/0.60
+ encapsulation dot1Q 60
+ ip address 192.168.6.1 255.255.255.0
+ ip helper-address 192.168.1.1
+ standby 60 ip 192.168.6.254
+ standby 60 priority 110
+ standby 60 preempt
+!
+interface GigabitEthernet0/0/0.70
+ encapsulation dot1Q 70
+ ip address 192.168.7.1 255.255.255.0
+ ip helper-address 192.168.1.1
+ standby 70 ip 192.168.7.254
+ standby 70 priority 110
+ standby 70 preempt
+!
+interface GigabitEthernet0/0/0.80
+ encapsulation dot1Q 80
+ ip address 192.168.8.1 255.255.255.0
+ ip helper-address 192.168.1.1
+ ip access-group 130 in
+ standby 80 ip 192.168.8.254
+ standby 80 priority 110
+ standby 80 preempt
+!
+interface GigabitEthernet0/0/0.90
+ encapsulation dot1Q 90
+ ip address 192.168.9.1 255.255.255.0
+ ip helper-address 192.168.1.1
+ ip access-group 140 in
+ standby 90 ip 192.168.9.254
+ standby 90 priority 110
+ standby 90 preempt
+!
+interface GigabitEthernet0/0/0.100
+ encapsulation dot1Q 100
+ ip address 192.168.10.1 255.255.255.0
+ ip helper-address 192.168.1.1
+ standby 100 ip 192.168.10.254
+ standby 100 priority 110
+ standby 100 preempt
+!
+interface GigabitEthernet0/0/0.110
+ encapsulation dot1Q 110
+ ip address 192.168.11.1 255.255.255.0
+ ip helper-address 192.168.1.1
+ standby 110 ip 192.168.11.254
+ standby 110 priority 110
+ standby 110 preempt
+!
+interface GigabitEthernet0/0/0.120
+ encapsulation dot1Q 120
+ ip address 192.168.12.1 255.255.255.0
+ ip helper-address 192.168.1.1
+ standby 120 ip 192.168.12.254
+ standby 120 priority 110
+ standby 120 preempt
+!
+interface GigabitEthernet0/0/0.130
+ encapsulation dot1Q 130
+ ip address 192.168.13.1 255.255.255.0
+ ip helper-address 192.168.1.1
+ standby 130 ip 192.168.13.254
+ standby 130 priority 110
+ standby 130 preempt
+!
+interface GigabitEthernet0/0/0.140
+ encapsulation dot1Q 140
+ ip address 192.168.14.1 255.255.255.0
+ ip helper-address 192.168.1.1
+ standby 140 ip 192.168.14.254
+ standby 140 priority 110
+ standby 140 preempt
+!
+interface GigabitEthernet0/0/0.150
+ encapsulation dot1Q 150
+ ip address 192.168.15.1 255.255.255.0
+ standby 150 ip 192.168.15.254
+ standby 150 priority 110
+ standby 150 preempt
+!
+interface GigabitEthernet0/0/1
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/2
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Serial0/1/0
+ no ip address
+!
+interface Serial0/1/1
+ ip address 10.0.0.1 255.255.255.252
+ ip access-group 101 in
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router rip
+!
+ip classless
+ip route 0.0.0.0 0.0.0.0 10.0.0.2
+ip route 192.168.0.0 255.255.0.0 GigabitEthernet0/0/0
+!
+ip flow-export version 9
+!
+!
+access-list 120 permit ip 192.168.2.0 0.0.0.255 any
+access-list 120 permit udp any any eq bootps
+access-list 130 permit ip 192.168.8.0 0.0.0.255 any
+access-list 130 permit ip any any
+access-list 150 permit ip 192.168.2.0 0.0.0.255 any
+access-list 140 permit ip 192.168.9.0 0.0.0.255 any
