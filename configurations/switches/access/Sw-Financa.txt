@@ -1,0 +1,31 @@
+Sw-Financa#show running-config 
+Building configuration...
+
+Current configuration : 1279 bytes
+!
+version 15.0
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Sw-Financa
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+ switchport access vlan 80
+ switchport trunk allowed vlan 50,60,70,80,90,100,110,120,130,140
+!
+interface FastEthernet0/2
+ switchport access vlan 80
+ switchport mode access
+!
+interface FastEthernet0/3
+ switchport access vlan 80
+ switchport mode access
