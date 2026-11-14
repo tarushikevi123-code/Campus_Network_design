@@ -1,5 +1,6 @@
 
 # IoT Smart Parking System
+<img width="988" height="632" alt="image" src="https://github.com/user-attachments/assets/f39d4daf-674e-4405-9fe4-a248d055a1c9" />
 
 ## Overview
 
@@ -31,6 +32,8 @@ The MCU runs a Python script to:
 ## Source Code
 
 The MCU Python implementation is available in:
+<img width="812" height="1155" alt="image" src="https://github.com/user-attachments/assets/967dedbb-af13-4e13-b28e-19cfd4ed4917" />
+
 
 `mcu/main.py`
 
